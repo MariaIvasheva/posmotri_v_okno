@@ -19,7 +19,6 @@ html {
   display: grid;
   align-items: center;
   justify-items: center;
-  margin: auto;
 }
 
 h1,
@@ -39,10 +38,6 @@ fieldset {
 ul,
 ol {
   list-style: none;
-}
-
-li:not(:first-child) {
-  margin-top: 30px;
 }
 
 .content {
@@ -70,7 +65,8 @@ li:not(:first-child) {
 .result__video {
   width: 100%;
   max-height: 386px;
-  object-fit: fill;
+  object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
@@ -90,7 +86,7 @@ li:not(:first-child) {
 .search-form__fieldset-title {
   width: 51.4px;
   height: 22px;
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
@@ -127,7 +123,7 @@ li:not(:first-child) {
   cursor: text;
 }
 .search-form__label-text {
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 19px;
@@ -137,13 +133,13 @@ li:not(:first-child) {
 .search-form__textfield {
   width: 225px;
   height: 27px;
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
   text-align: left;
   background-color: transparent;
-  color: rgb(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
   border-style: solid;
   border-color: rgba(255, 255, 255, 1);
   padding: 2.5px 0 2.5px 0;
@@ -181,7 +177,7 @@ li:not(:first-child) {
 }
 
 .button {
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 21.6px;
@@ -190,17 +186,6 @@ li:not(:first-child) {
   background-color: transparent;
   border: 1px solid rgb(255, 255, 255, 1);
   cursor: pointer;
-}
-
-.button:active {
-  background: rgba(84, 80, 80, 1);
-  border: 1px solid rgb(255, 255, 255, 1);
-}
-
-.search-form__submit-button {
-  width: 194px;
-  height: 34px;
-  margin-top: 20px;
 }
 
 .button:focus {
@@ -214,11 +199,19 @@ li:not(:first-child) {
 
 .button:hover {
   text-decoration: 1px underline;
+  text-underline-position: under;
 }
 
 .button:focus-visible {
   border: 2px double rgb(255, 255, 255, 1);
 }
+
+.search-form__submit-button {
+  width: 194px;
+  height: 34px;
+  margin-top: 20px;
+}
+
 .content__details {
   display: grid;
   min-width: 399px;
@@ -228,7 +221,7 @@ li:not(:first-child) {
 
 .title {
   max-height: 206px;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 75px;
   line-height: 71.5px;
   text-align: left;
@@ -250,9 +243,13 @@ li:not(:first-child) {
 }
 
 .content__list-item {
-  max-width: 394px;
+  max-width: 398px;
   max-height: 107px;
   padding: 3px;
+}
+
+.content__list-item:not(:first-child) {
+  margin-top: 30px;
 }
 
 .content__card-link {
@@ -265,6 +262,18 @@ li:not(:first-child) {
 .content__card-link:hover {
   text-decoration: 1px underline;
   text-underline-position: under;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid rgb(255, 255, 255, 1);
+}
+
+.content__card-link:active {
+  background-color: rgba(84, 80, 80, 1);
 }
 
 .content__card-link_current {
@@ -281,14 +290,6 @@ li:not(:first-child) {
   background-color: rgb(84, 80, 80, 1);
 }
 
-.content__card-link:focus {
-  outline: none;
-}
-
-.content__card-link:focus-visible {
-  outline: 1px solid rgb(255, 255, 255, 1);
-}
-
 .content__video-card {
   display: flex;
   flex-direction: row;
@@ -302,18 +303,23 @@ li:not(:first-child) {
 }
 
 .content__video-card-title {
+  display: inline;
   text-transform: uppercase;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 30px;
   font-weight: 700;
   line-height: 30px;
   text-align: left;
   margin-bottom: 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 192px;
   /*margin-block-end: 6px;*/
 }
 
 .content__video-card-description {
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 16.2px;
@@ -330,6 +336,7 @@ li:not(:first-child) {
 .more-button {
   width: 399px;
   height: 34px;
+  margin-top: 30px;
 }
 
 .visually-hidden {
