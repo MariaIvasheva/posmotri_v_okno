@@ -233,6 +233,7 @@ ol {
   overflow-y: auto;
   display: block;
   margin-top: auto;
+  width: 399px;
   height: 298px;
 }
 
