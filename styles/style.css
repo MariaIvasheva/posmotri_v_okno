@@ -299,6 +299,7 @@ ol {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 192px;
   padding-bottom: 6px;
   /*margin-block-end: 6px;*/
 }
